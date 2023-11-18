@@ -1,33 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./Card.css";
+import TextScramble from "../../utilities/TextScramble";
 
-export default function Card({ title, subtitle, children }) {
-  const [isHovered, setIsHovered] = useState(false);
+export default function Card({ title, subtitle, phrases, children }) {
+  useEffect(() => {
+    const element = document.querySelector(".scrambled");
+    const scrambler = new TextScramble(element);
 
-  const unscrambleText = () => {
-    setIsHovered(true);
-  };
+    let counter = 0;
+    const next = () => {
+      scrambler.setText(phrases[counter]).then(() => {
+        setTimeout(next, 1600);
+      });
+      counter = (counter + 1) % phrases.length;
+    };
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const scrambleText = (text) => {
-    return text
-      .split("")
-      .sort(() => Math.random() - 0.5)
-      .join("");
-  };
+    next();
+  }, [phrases]);
 
   return (
     <div className="row-span-3 flex flex-col flex-auto justify-center text-center">
-      <h1
-        className="font-bold text-2xl text-neutral-300"
-        onMouseEnter={unscrambleText}
-        onMouseLeave={handleMouseLeave}
-      >
-        {isHovered ? title : scrambleText(title)}
-      </h1>
+      <h1 className="scrambled font-bold text-2xl text-neutral-300">{title}</h1>
       <h6 className="font-light text-sm text-neutral-400 max-w-xl">
         {subtitle}
       </h6>
