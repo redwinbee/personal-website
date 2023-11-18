@@ -4,7 +4,7 @@ export default function Container({ children }) {
     return (
         <div className="flex items-center justify-center min-h-screen">
             <div className="shadow bg-neutral-700 w-1/2 py-3.5">
-                <div className="container mx-auto px-4">
+                <div className="flex flex-auto mx-auto px-4">
                     {children}
                 </div>
             </div>
