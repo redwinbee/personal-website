@@ -1,22 +1,18 @@
-import React, {useState} from "react";
+import React from "react";
+import Container from "./components/Container";
 import "./App.css";
+import Card from "./components/Card";
 
-function App() {
-    let [value, setValue] = useState(0)
-
-    function handleClick() {
-        setValue(value + 1)
-    }
-
+export default function App() {
     return (
-        <div className="app">
-            <h1>Edwin Bermudes</h1>
-            <p>This is a placeholder while the site is being constructed</p>
-            <p>Come back another time =)</p>
-            <p>value = {value}</p>
-            <button onClick={handleClick}>Click Me!</button>
-        </div>
+        <Container>
+            <Card title="Edwin Bermudes">
+                <p>This website is being written using React and TailwindCSS and is still very much a work in progress.
+                    Thanks for stopping by and make sure to come back later! P.S: If you hover over the scrambled text
+                    above this paragraph, you can see what it says =P
+                </p>
+                <a className="text-cyan-200" href="https://github.com/redwinbee">@GitHub</a>
+            </Card>
+        </Container>
     )
 }
-
-export default App;
