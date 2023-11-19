@@ -8,6 +8,7 @@ export default class TextScramble {
     this.chars = "!<>-_\\/[]{}—=+*^?#________";
     this.update = this.update.bind(this);
   }
+
   setText(newText) {
     const oldText = this.el.innerText;
     const length = Math.max(oldText.length, newText.length);
@@ -25,6 +26,7 @@ export default class TextScramble {
     this.update();
     return promise;
   }
+
   update() {
     let output = "";
     let complete = 0;
@@ -51,6 +53,7 @@ export default class TextScramble {
       this.frame++;
     }
   }
+
   randomChar() {
     return this.chars[Math.floor(Math.random() * this.chars.length)];
   }
