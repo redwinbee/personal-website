@@ -57,4 +57,8 @@ export default class TextScramble {
   randomChar() {
     return this.chars[Math.floor(Math.random() * this.chars.length)];
   }
+
+  dispose() {
+    cancelAnimationFrame(this.frameRequest);
+  }
 }
