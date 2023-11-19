@@ -19,7 +19,7 @@ export default function Card({ title, subtitle, phrases, children }) {
   }, [phrases]);
 
   return (
-    <div className="flex flex-col flex-auto justify-center text-center h-full p-2 bg-neutral-800 rounded-xl shadow-2xl">
+    <div className="card flex flex-col flex-auto justify-center text-center h-full p-2 rounded-xl shadow-xl">
       <h1 className="scrambled font-bold text-2xl text-neutral-300">{title}</h1>
       <div className="font-light text-sm text-neutral-400">
         <h6>{subtitle}</h6>
