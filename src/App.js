@@ -17,20 +17,20 @@ export default function App() {
   function getEducationDescription() {
     return `I spend a great deal of time learning new material and reinforcing what I already know. Aside from my formal
     education in university, I am also partially self-taught with the help of some of the most popular platforms for 
-     learning new skills online such as Udemy, YouTube, and of course, StackOverflow`;
+     learning new skills online such as Udemy, YouTube, and of course, StackOverflow.`;
   }
 
   function getExperienceDescription() {
-    return `I am currently looking for new opportunities to grow and improve as developer, and while I currently do not
+    return `I am always looking for new opportunities to grow and improve as developer, and while I currently do not
     have any real world experience, I have built a few projects as part of my degree which will be included at a later
-    date. As for my skills, I have learned quite a few frameworks, languages, and design patterns`;
+    date. As for my skills, I have learned quite a few frameworks, languages, and design patterns.`;
   }
 
   return (
     <>
       <Container>
         <Layout>
-          <div className="col-start-2 row-start-1 col-span-4 row-span-3">
+          <div className="col-start-1 row-start-1 col-span-6 row-span-2">
             <Card
               title="Edwin Bermudes"
               subtitle={getPersonalDescription()}
@@ -41,7 +41,7 @@ export default function App() {
               </a>
             </Card>
           </div>
-          <div className="col-start-1 row-start-4 col-span-3 row-span-3">
+          <div className="col-start-1 row-start-3 col-span-3 row-span-5">
             <Card
               title="Education"
               subtitle={getEducationDescription()}
@@ -73,7 +73,7 @@ export default function App() {
               </div>
             </Card>
           </div>
-          <div className="col-start-4 row-start-4 col-span-3 row-span-3">
+          <div className="col-start-4 row-start-3 col-span-3 row-span-5">
             <Card
               title="Experience"
               subtitle={getExperienceDescription()}

@@ -15,7 +15,7 @@ export default function Card({ title, subtitle, phrases, children }) {
         setTimeout(() => {
           counter = (counter + 1) % phrases.length;
           next();
-        }, 3600);
+        }, 7200);
       });
     };
 
@@ -34,8 +34,8 @@ export default function Card({ title, subtitle, phrases, children }) {
         {title}
       </h1>
       <div className="font-light text-sm text-neutral-400">
-        <h6>{subtitle}</h6>
-        <div className="p-2">{children}</div>
+        <h6 className="p-2">{subtitle}</h6>
+        <div className="p-5">{children}</div>
       </div>
     </div>
   );
