@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Layout({ children }) {
   return (
-    <div className="grid grid-cols-5 grid-rows-5 h-full gap-5 p-5">
+    <div className="grid grid-cols-6 grid-rows-6 h-fit gap-5 p-5 m-5">
       {children}
     </div>
   );

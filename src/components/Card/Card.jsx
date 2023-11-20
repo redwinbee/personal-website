@@ -15,7 +15,7 @@ export default function Card({ title, subtitle, phrases, children }) {
         setTimeout(() => {
           counter = (counter + 1) % phrases.length;
           next();
-        }, 1600);
+        }, 3600);
       });
     };
 
@@ -26,10 +26,10 @@ export default function Card({ title, subtitle, phrases, children }) {
   }, [phrases]);
 
   return (
-    <div className="card flex flex-col flex-auto justify-center text-center h-full p-5 rounded-xl shadow-xl">
+    <div className="card flex flex-col flex-auto justify-center text-center h-full pl-12 pr-12 pt-6 pb-6 rounded-xl shadow-xl">
       <h1
         ref={elementRef}
-        className="scrambled font-bold text-2xl text-neutral-300"
+        className="scrambled font-bold text-2xl text-cyan-500"
       >
         {title}
       </h1>
