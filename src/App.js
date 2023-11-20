@@ -26,6 +26,15 @@ export default function App() {
     date. As for my skills, I have learned quite a few frameworks, languages, and design patterns.`;
   }
 
+  function getPgpDescription() {
+    return `This is my PGP key that I use to sign git commits with. Funnily enough I don't actually use it for its
+    intended purposes which is to verify/encrypt e-mails, but I am sure I am not the minority here.`;
+  }
+
+  function getSshDescription() {
+    return `I also have an SSH key that I use for authentication in various places`;
+  }
+
   return (
     <>
       <Container>
@@ -98,6 +107,60 @@ export default function App() {
                   <li>&#x2022; React</li>
                 </ul>
               </div>
+            </Card>
+          </div>
+          <div className="col-start-1 row-start-8 col-span-4 row-span-5">
+            <Card
+              title="PGP"
+              subtitle={getPgpDescription()}
+              phrases={["PGP", "Ed25519"]}
+            >
+              <p className="text-neutral-300 font-light">
+                -----BEGIN PGP PUBLIC KEY BLOCK-----
+                <br />
+                mDMEZUrWChYJKwYBBAHaRw8BAQdAAQPX1PJn5EBwYG09Z+9D/KVkpJ0Cr+ycJgPo
+                <br />
+                hj8RiN+0IUVkd2luIEJlcm11ZGVzIDxoZXlAcmVkd2luYmVlLm1lPoiTBBMWCgA7
+                <br />
+                FiEEPGUUd+TQv2gAbWOqPPvm56eZ2mAFAmVK1goCGyMFCwkIBwICIgIGFQoJCAsC
+                <br />
+                BBYCAwECHgcCF4AACgkQPPvm56eZ2mBDUgEAqlehi3F0SV0hCgIIn1odsue2dgzM
+                <br />
+                uBk9oIgMxUkJAdkA/RwlfS+PH9XUvLTaBiKINK9MzoAHx97EDNtVFHzsjucEuDgE
+                <br />
+                ZUrWHxIKKwYBBAGXVQEFAQEHQHAc0MW9o+lcKNL8isaszZu9ikDW9J3gLdx2Wbwm
+                <br />
+                wB5eAwEIB4h4BBgWCgAgFiEEPGUUd+TQv2gAbWOqPPvm56eZ2mAFAmVK1h8CGwwA
+                <br />
+                CgkQPPvm56eZ2mAmgQD+IDhLWkxXG7M1quzRqvT6BptMd62V7szxdszWDTcUSUwA
+                <br />
+                +werws+DsbVGhJ3XwRVpJhE4Q6AwEBZBq+fbjEV05CMM =z3h/
+                <br />
+                -----END PGP PUBLIC KEY BLOCK-----
+                <br />
+              </p>
+              <h1 className="text-xl font-medium text-cyan-600">Or</h1>
+              <p className="text-indigo-200">
+                curl https://redwinbee.me/redwinbee_pgp.asc | gpg --import
+              </p>
+            </Card>
+          </div>
+          <div className="col-span-2 row-span-5">
+            <Card
+              title="SSH"
+              subtitle={getSshDescription()}
+              phrases={["SSH", "Ed25519"]}
+            >
+              <p className="text-neutral-300 font-light">
+                ssh-ed25519
+                AAAAC3NzaC1lZDI1NTE5AAAAIAED19TyZ+RAcGBtPWfvQ/ylZKSdAq/snCYD6IY/EYjf
+                openpgp:0xA799DA60
+              </p>
+              <h1 className="text-xl font-medium text-cyan-600">Or</h1>
+              <p className="text-indigo-200">
+                curl https://redwinbee.me/id_ed25519.pub >>
+                ~/.ssh/authorized_keys
+              </p>
             </Card>
           </div>
         </Layout>

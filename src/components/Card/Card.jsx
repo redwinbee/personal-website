@@ -35,7 +35,7 @@ export default function Card({ title, subtitle, phrases, children }) {
       </h1>
       <div className="font-light text-sm text-neutral-400">
         <h6 className="p-2">{subtitle}</h6>
-        <div className="p-5">{children}</div>
+        <div className="p-5 break-words">{children}</div>
       </div>
     </div>
   );
