@@ -113,7 +113,7 @@ export default function App() {
             <Card
               title="PGP"
               subtitle={getPgpDescription()}
-              phrases={["PGP", "Ed25519"]}
+              phrases={["PGP", "RSA4096"]}
             >
               <p className="text-indigo-200">
                 curl https://redwinbee.me/redwinbee_pgp.asc | gpg --import
@@ -124,7 +124,7 @@ export default function App() {
             <Card
               title="SSH"
               subtitle={getSshDescription()}
-              phrases={["SSH", "Ed25519"]}
+              phrases={["SSH", "RSA4096"]}
             >
               <p className="text-indigo-200">
                 curl https://redwinbee.me/id_rsa.pub >>
